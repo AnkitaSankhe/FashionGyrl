@@ -25,6 +25,7 @@
             </div>
 
             <table class="table table-hover">
+            <thead>
                 <tr>
                     <th>Product</th>
                     <th>Unit Price</th>
@@ -32,14 +33,15 @@
                     <th>Price</th>
                     <th>Action</th>
                 </tr>
-               
+                </thead>
+             
                 <tr ng-repeat = "item in cart.cartItems">
-                    <td>{{item.product.productName}}</td>
-                    <td>{{item.product.productPrice}}</td>
-                    <td>{{item.quantity}}</td>
-                    <td>{{item.totalPrice}}</td>
-                    <td><a href="#" class="label label-danger" ng-click="removeFromCart(item.product.productId)">
-                        <span class="glyphicon glyphicon-remove"></span>remove</a></td>
+                    <th>{{item.product.productName}}</th>
+                    <th>{{item.product.productPrice}}</th>
+                    <th>{{item.quantity}}</th>
+                    <th>{{item.totalPrice}}</th>
+                    <th><a href="#" class="label label-danger" ng-click="removeFromCart(item.product.productId)">
+                        <span class="glyphicon glyphicon-remove"></span>remove</a></th>
                 </tr>
                 <tr>
                     <th></th>
@@ -48,14 +50,17 @@
                     <th>{{calGrandTotal()}}</th>
                     <th></th>
                 </tr>
+             
             </table>
 
-            <a href="<spring:url value="/" />" class="btn btn-default">Continue Shopping</a>
+            <a href="<spring:url value="/product/productList/all" />" class="btn btn-default">Continue Shopping</a>
             </div>
         </section>
 
     </div>
 </div>
-
+<br>
+<br>
+<br>
 
 <%@include file="/WEB-INF/views/template/footer.jsp" %>
